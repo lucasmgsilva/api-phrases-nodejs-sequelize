@@ -40,7 +40,7 @@ export const show = async (req: Request, res: Response) => {
         if (phrase){
             res.json(phrase);
         } else {
-            res.json({error: 'Frase não encontrada'});
+            res.json({error: {message: 'Frase não encontrada'}});
         }
 
     } catch (error){
@@ -63,7 +63,7 @@ export const update = async (req: Request, res: Response) => {
             
             res.json(phrase);
         } else {
-            res.json({error: 'Frase não encontrada.'})
+            res.json({error: {message: 'Frase não encontrada.'}})
         }
 
     } catch (error){
