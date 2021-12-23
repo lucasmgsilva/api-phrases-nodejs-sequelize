@@ -1,14 +1,14 @@
 import { Router } from 'express';
-import * as ApiController from '../controllers/api';
+import * as PhraseController from '../controllers/phraseController';
 
 const router = Router();
 
-router.get('/ping', ApiController.ping);
+router.get('/ping', PhraseController.ping);
 
-router.get('/frases', ApiController.index);
-router.post('/frases', ApiController.store);
-router.get('/frases/:id', ApiController.show);
-router.put('/frases/:id', ApiController.update);
-router.delete('/frases/:id', ApiController.destroy);
+router.get('/frases', PhraseController.index); //Lista todas as frases
+router.post('/frases', PhraseController.store); //Armazena uma frase
+router.get('/frases/:id', PhraseController.show); //Mostra uma frase
+router.put('/frases/:id', PhraseController.update); //Atualiza uma frase
+router.delete('/frases/:id', PhraseController.destroy); //Destrói uma frase
 
 export default router;
